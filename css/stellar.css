@@ -1,0 +1,131 @@
+/* 星空磨砂玻璃主题。只柔化背景层，文字与原创角色不参与 blur。 */
+:root {
+  --text: #27364b;
+  --muted: #586a7c;
+  --line: rgba(255, 255, 255, .55);
+  --accent: #42677c;
+  --glass: rgba(255, 255, 255, .70);
+  --glass-border: rgba(255, 255, 255, .70);
+}
+body { background: #ccd8e9; isolation: isolate; }
+body::before {
+  content: '';
+  position: fixed;
+  z-index: -2;
+  inset: -45px;
+  background: url('../assets/images/stellar-background.png') center / cover no-repeat;
+  filter: blur(20px) saturate(.76);
+  pointer-events: none;
+}
+body::after {
+  content: '';
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(125deg, rgba(223, 232, 247, .76), rgba(221, 223, 244, .58) 50%, rgba(216, 231, 247, .72));
+  pointer-events: none;
+}
+.site-header, .step-card, .group-card, .home-note, .test-intro,
+.quiz-shell, .result-hero, .trait-card, .identity-explainer,
+.score-details, .type-card, .atlas-group-heading {
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(24px) saturate(.85);
+  backdrop-filter: blur(24px) saturate(.85);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 12px 38px rgba(29, 48, 85, .055), inset 0 1px 0 rgba(255, 255, 255, .65);
+}
+.site-header { border-width: 0 0 1px; background: rgba(249, 252, 255, .74); }
+.home-hero { background: none; }
+.intro-badge { background: rgba(255, 255, 255, .54); color: #4e6f7c; border: 1px solid rgba(255, 255, 255, .6); }
+.hero-description, .step-card p, .section-heading p, .group-card p,
+.home-note p, .atlas-heading p, .test-intro>p { color: #52677b; }
+.hero-meta, .edition, .site-footer { color: #586d83; }
+.step-card { border-top: 3px solid var(--step-color); border-radius: 15px; }
+.step-blue { --step-color: #658caa; }
+.step-green { --step-color: #639788; }
+.step-purple { --step-color: #8e7ead; }
+.group-card { border-radius: 15px; }
+.home-note { max-width: var(--max); margin: 0 auto 24px; border-radius: 20px; }
+.site-footer { border-top: 1px solid rgba(255, 255, 255, .4); }
+.button.primary { box-shadow: 0 6px 18px rgba(42, 74, 81, .12); }
+.button.secondary { background: rgba(255, 255, 255, .65); border-color: rgba(255, 255, 255, .9); }
+.test-intro { max-width: 820px; margin: 32px auto 20px; border-radius: 20px; }
+.quiz-shell { width: min(100% - 48px, 820px); padding: 25px 40px 32px; border-radius: 20px; margin-bottom: 30px; }
+.quiz-top .eyebrow, .question-hint, .question-category, .progress-label,
+.quiz-bottom>span, .quiz-privacy, .back-link { color: #64778a; }
+.option { background: rgba(255, 255, 255, .57); border-color: rgba(177, 193, 211, .54); }
+.option:hover:not(:disabled), .option.selected { background: var(--choice-tint); }
+.progress-track { background: rgba(144, 168, 183, .19); }
+.result-top .eyebrow { color: #5e7386; }
+.result-hero { border-radius: 23px; gap: 35px; position: relative; overflow: hidden; }
+.result-hero.certified { border: 1px solid rgba(255, 255, 255, .95); }
+.result-hero.certified::before {
+  content: 'XIU28 / PERSONALITY CERTIFICATE';
+  position: absolute;
+  top: 17px;
+  left: 40px;
+  color: #708190;
+  font-size: 8px;
+  letter-spacing: 1.8px;
+}
+.result-hero.certified { padding-top: 53px; }
+.identity-tags>span { background: rgba(255, 255, 255, .67); }
+.result-intro blockquote { color: #445b6b; }
+.keywords span, .identity-code { color: #647787; }
+.character-stage { margin: 0; display: block; min-height: 0; background: rgba(255, 255, 255, .61); border: 1px solid rgba(255, 255, 255, .88); border-radius: 18px; overflow: hidden; box-shadow: 0 8px 28px rgba(54, 66, 94, .06); }
+.character-frame { aspect-ratio: 1; padding: 14px; display: flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, .86); }
+.character-image { display: block; width: 100%; height: 100%; object-fit: contain; border-radius: 8px; }
+.character-stage figcaption { display: flex; justify-content: space-between; gap: 10px; padding: 12px 16px; font-size: 11px; color: #657789; }
+.character-stage figcaption>span:first-child { font-weight: 600; color: var(--accent); }
+.character-stage figcaption>span:last-child { font-size: 9px; }
+.trait-card { border-radius: 14px; }
+.trait-card p, .identity-explainer p { color: #576b7d; }
+.result-actions, .atlas-bottom { border-color: rgba(255, 255, 255, .56); }
+.score-details { border-radius: 14px; }
+.score-reason, .score-footnote, .result-disclaimer { color: #5f7285; }
+.atlas-filters a { background: rgba(255, 255, 255, .54); border-color: rgba(255, 255, 255, .8); }
+.atlas-filters a[aria-current] { background: var(--accent); }
+.atlas-filters a>span { color: #61788a; }
+.atlas-group-heading { border-radius: 14px; }
+.atlas-group-heading p, .atlas-group-heading>span:last-child { color: #6c7c8e; }
+.type-card { border-radius: 16px; padding: 16px; }
+.type-card:hover { box-shadow: 0 13px 30px rgba(45, 61, 93, .12); border-color: rgba(255, 255, 255, .98); }
+.type-card-meta { color: #6f8090; }
+.atlas-portrait { position: relative; aspect-ratio: 1; margin-top: 14px; background: rgba(255, 255, 255, .9); border-radius: 11px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.atlas-portrait img { display: block; width: 100%; height: 100%; object-fit: contain; padding: 9px; }
+.type-card h3 { margin-top: 14px; }
+.type-card>p, .type-card-bottom { color: #667b88; }
+.type-card-bottom { border-color: rgba(143, 166, 189, .24); margin-top: 17px; }
+.image-fallback { padding: 24px; text-align: center; font-size: 12px; color: #758497; }
+@media (max-width: 1200px) { .home-note { margin-left: 32px; margin-right: 32px; } }
+@media (max-width: 860px) { .test-intro { margin-left: 24px; margin-right: 24px; } }
+@media (max-width: 600px) {
+  body::before { filter: blur(16px) saturate(.74); background-position: 53% center; inset: -32px; }
+  body::after { background: linear-gradient(150deg, rgba(224, 233, 245, .80), rgba(226, 221, 242, .67), rgba(210, 230, 243, .74)); }
+  .home-hero { background: none; }
+  .step-card { border-top: 1px solid var(--glass-border); border-left: 3px solid var(--step-color); }
+  .home-note { margin: 0 20px 20px; border-radius: 16px; }
+  .test-intro { margin: 20px 16px 14px; padding: 22px 14px; border-radius: 17px; }
+  .quiz-shell { width: calc(100% - 32px); padding: 14px 17px 25px; border-radius: 17px; margin-bottom: 20px; }
+  .quiz-top .eyebrow { font-size: 8px; }
+  .question-title { font-size: 21px; }
+  .result-hero { border-radius: 19px; padding: 26px 21px; }
+  .result-hero.certified { padding-top: 48px; }
+  .result-hero.certified::before { left: 21px; top: 17px; font-size: 7px; letter-spacing: 1.3px; }
+  .character-stage { border-radius: 14px; width: 100%; }
+  .character-frame { padding: 10px; }
+  .character-stage figcaption { padding: 11px 13px; }
+  .type-card { padding: 12px; border-radius: 13px; }
+  .atlas-portrait { margin-top: 11px; border-radius: 8px; }
+  .atlas-portrait img { padding: 5px; }
+  .type-card h3 { font-size: 21px; margin-top: 12px; }
+  .type-card-bottom { margin-top: 13px; }
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  :root { --glass: rgba(249, 252, 255, .93); }
+}
+@media print {
+  body::before, body::after { display: none; }
+  body { background: white; }
+  .result-hero, .trait-card, .identity-explainer { background: white; backdrop-filter: none; box-shadow: none; }
+}
