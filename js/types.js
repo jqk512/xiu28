@@ -95,7 +95,7 @@ window.XIU_TYPES = [
     "weaknesses": "容易同时打开太多计划，收尾时需要更多耐心。",
     "social": "喜欢与愿意交换新想法的人同行，在共同探索中建立信任。",
     "emotion": "遇到停滞会烦躁，给自己一个可完成的小挑战有助于恢复。",
-    "image": "assets/characters/jiaomujiao.webp"
+    "image": "assets/characters/jiaomujiao.png"
   },
   {
     "id": "kangjinlong",
@@ -117,7 +117,7 @@ window.XIU_TYPES = [
     "weaknesses": "可能把高标准也投射给他人，忽略不同的成长速度。",
     "social": "欣赏有主见的伙伴，信任往往来自坦诚而有质量的讨论。",
     "emotion": "失控感出现时容易变得严苛，区分底线和偏好会更轻松。",
-    "image": "assets/characters/kangjinlong.webp"
+    "image": "assets/characters/kangjinlong.png"
   },
   {
     "id": "dituhe",
@@ -139,7 +139,7 @@ window.XIU_TYPES = [
     "weaknesses": "有时准备过久，需要允许不完美的第一版出现。",
     "social": "愿意通过实际帮助表达在意，偏爱可以长久合作的关系。",
     "emotion": "压力下习惯默默承担，明确说出需要比独自消化更有效。",
-    "image": "assets/characters/dituhe.webp"
+    "image": "assets/characters/dituhe.png"
   },
   {
     "id": "fangritu",
@@ -161,7 +161,7 @@ window.XIU_TYPES = [
     "weaknesses": "可能为了维持积极气氛，略过真实的困难和分歧。",
     "social": "自然地邀请新人加入，喜欢一起完成有意义的事情。",
     "emotion": "低落时不必急着鼓舞所有人，允许自己也接受照顾。",
-    "image": "assets/characters/fangritu.webp"
+    "image": "assets/characters/fangritu.png"
   },
   {
     "id": "xinyuehu",
@@ -183,7 +183,7 @@ window.XIU_TYPES = [
     "weaknesses": "可能过度推演别人的想法，让简单选择变得复杂。",
     "social": "先观察再靠近，重视能深入交谈又尊重独处的伙伴。",
     "emotion": "容易吸收周围的情绪，写下感受能帮助分清自己和他人的需要。",
-    "image": "assets/characters/xinyuehu.webp"
+    "image": "assets/characters/xinyuehu.png"
   },
   {
     "id": "weihuohu",
@@ -205,7 +205,7 @@ window.XIU_TYPES = [
     "weaknesses": "热情退潮后容易换方向，需要为后半程预留耐力。",
     "social": "喜欢直接而热烈的互动，往往通过一起行动迅速熟悉。",
     "emotion": "情绪来得快，重要回应前留一点缓冲会减少误伤。",
-    "image": "assets/characters/weihuohu.webp"
+    "image": "assets/characters/weihuohu.png"
   },
   {
     "id": "jishuibao",
@@ -227,7 +227,7 @@ window.XIU_TYPES = [
     "weaknesses": "可能频繁切换路线，让伙伴难以跟上你的节奏。",
     "social": "享受松弛而有新鲜感的关系，不喜欢被固定角色限制。",
     "emotion": "受束缚时倾向抽离，先说明边界能减少突然消失的误解。",
-    "image": "assets/characters/jishuibao.webp"
+    "image": "assets/characters/jishuibao.png"
   },
   {
     "id": "doumuxie",
@@ -249,7 +249,7 @@ window.XIU_TYPES = [
     "weaknesses": "容易沉浸研究，错过把想法交给现实检验的时机。",
     "social": "偏爱有内容的交流，常以分享发现作为亲近的方式。",
     "emotion": "不确定时会查找更多信息，给研究设个终点更有帮助。",
-    "image": "assets/characters/doumuxie.webp"
+    "image": "assets/characters/doumuxie.png"
   },
   {
     "id": "niujinniu",
@@ -271,7 +271,7 @@ window.XIU_TYPES = [
     "weaknesses": "规则变化时可能适应较慢，容易将妥协理解成退让。",
     "social": "交友谨慎，重视守信与一致的行动，关系建立后很持久。",
     "emotion": "倾向压住不满，及时表达小分歧比积累到极限更好。",
-    "image": "assets/characters/niujinniu.webp"
+    "image": "assets/characters/niujinniu.png"
   },
   {
     "id": "nvtufu",
@@ -293,7 +293,7 @@ window.XIU_TYPES = [
     "weaknesses": "容易习惯性补位，把自己的休息放到最后。",
     "social": "以记得小事和持续陪伴表达关心，喜欢熟悉的小圈子。",
     "emotion": "环境变化时需要缓冲，固定的小仪式能帮助重新安定。",
-    "image": "assets/characters/nvtufu.webp"
+    "image": "assets/characters/nvtufu.png"
   },
   {
     "id": "xurishu",
@@ -315,7 +315,7 @@ window.XIU_TYPES = [
     "weaknesses": "可能过度关注风险，低估已经拥有的资源。",
     "social": "不争抢焦点，但在关键时刻愿意提出有用的判断。",
     "emotion": "担忧时容易独自预演最坏情况，核对事实能减轻负担。",
-    "image": "assets/characters/xurishu.webp"
+    "image": "assets/characters/xurishu.png"
   },
   {
     "id": "weiyueyan",
@@ -337,7 +337,7 @@ window.XIU_TYPES = [
     "weaknesses": "可能因担心打扰而不说需求，让别人猜测你的边界。",
     "social": "偏爱低压力的一对一相处，安静陪伴也能让你满足。",
     "emotion": "情绪需要慢慢落地，规律独处和熟悉的环境有助于恢复。",
-    "image": "assets/characters/weiyueyan.webp"
+    "image": "assets/characters/weiyueyan.png"
   },
   {
     "id": "shihuozhu",
@@ -359,7 +359,7 @@ window.XIU_TYPES = [
     "weaknesses": "可能为喜欢的事投入过头，忽略身体和时间的限制。",
     "social": "熟悉前比较安静，信任后会热情分享自己的世界。",
     "emotion": "习惯攒着感受再表达，定期释放比一次性爆发更轻松。",
-    "image": "assets/characters/shihuozhu.webp"
+    "image": "assets/characters/shihuozhu.png"
   },
   {
     "id": "bishuiyu",
@@ -381,7 +381,7 @@ window.XIU_TYPES = [
     "weaknesses": "可能为了避免冲突而迟迟不表态，让自己的意愿被淹没。",
     "social": "给予别人表达空间，适合边界清晰、互相体谅的关系。",
     "emotion": "压力下容易退到幕后，明确一件自己想要的事能找回重心。",
-    "image": "assets/characters/bishuiyu.webp"
+    "image": "assets/characters/bishuiyu.png"
   },
   {
     "id": "kuimulang",
@@ -403,7 +403,7 @@ window.XIU_TYPES = [
     "weaknesses": "可能把求助看成能力不足，承担本可分担的难题。",
     "social": "看重彼此独立又能并肩的关系，不需要时时保持联系。",
     "emotion": "挫折时倾向加倍用力，暂停和换方法同样属于前进。",
-    "image": "assets/characters/kuimulang.webp"
+    "image": "assets/characters/kuimulang.png"
   },
   {
     "id": "loujingou",
@@ -425,7 +425,7 @@ window.XIU_TYPES = [
     "weaknesses": "有时过快判断对错，没给复杂处境留下解释空间。",
     "social": "重视坦诚与互相支持，对信任的人有很强的保护欲。",
     "emotion": "被误解时容易强硬回应，先确认对方意图能减少对立。",
-    "image": "assets/characters/loujingou.webp"
+    "image": "assets/characters/loujingou.png"
   },
   {
     "id": "weituzhi",
@@ -447,7 +447,7 @@ window.XIU_TYPES = [
     "weaknesses": "可能过分重视产出，忽略试错和休息的价值。",
     "social": "喜欢说到做到的伙伴，清晰分工会让合作更舒服。",
     "emotion": "混乱会消耗能量，整理出一个小而可控的步骤能恢复状态。",
-    "image": "assets/characters/weituzhi.webp"
+    "image": "assets/characters/weituzhi.png"
   },
   {
     "id": "maoriji",
@@ -469,7 +469,7 @@ window.XIU_TYPES = [
     "weaknesses": "可能太快进入主导角色，压缩了安静伙伴的发言空间。",
     "social": "喜欢目标清楚的交流，愿意用行动支持自己认可的人。",
     "emotion": "面对质疑容易进入防御，先区分建议和否定会更从容。",
-    "image": "assets/characters/maoriji.webp"
+    "image": "assets/characters/maoriji.png"
   },
   {
     "id": "biyuewu",
@@ -491,7 +491,7 @@ window.XIU_TYPES = [
     "weaknesses": "怀疑过多时可能错过合作，也可能苛责自己的不确定。",
     "social": "偏爱真诚而有深度的对话，不太愿意维持表面的热闹。",
     "emotion": "情绪常被分析包裹，先承认感受不需要论证也很重要。",
-    "image": "assets/characters/biyuewu.webp"
+    "image": "assets/characters/biyuewu.png"
   },
   {
     "id": "zuihuohou",
@@ -513,7 +513,7 @@ window.XIU_TYPES = [
     "weaknesses": "可能把刺激当方向，对重复而必要的工作缺少耐心。",
     "social": "喜欢有来有回的互动，玩笑和共同挑战让关系升温。",
     "emotion": "无聊时容易急躁，给能量找个小出口比制造冲突更合适。",
-    "image": "assets/characters/zuihuohou.webp"
+    "image": "assets/characters/zuihuohou.png"
   },
   {
     "id": "canshuiyuan",
@@ -535,7 +535,7 @@ window.XIU_TYPES = [
     "weaknesses": "有时过于追求最优解，让伙伴不清楚你真正的立场。",
     "social": "欣赏能讨论不同方案的人，保留自主空间让你更愿意合作。",
     "emotion": "受阻时会不断寻找替代路径，也需要允许暂时无解。",
-    "image": "assets/characters/canshuiyuan.webp"
+    "image": "assets/characters/canshuiyuan.png"
   },
   {
     "id": "jingmuan",
@@ -557,7 +557,7 @@ window.XIU_TYPES = [
     "weaknesses": "可能过度追求人人参与，延迟必要的取舍。",
     "social": "喜欢一起构思和体验新事物，通过共同创作建立关系。",
     "emotion": "缺少回应时容易失落，把热情也留给自己的兴趣会更稳定。",
-    "image": "assets/characters/jingmuan.webp"
+    "image": "assets/characters/jingmuan.png"
   },
   {
     "id": "guijinyang",
@@ -579,7 +579,7 @@ window.XIU_TYPES = [
     "weaknesses": "可能反复打磨而难以交付，也容易被不认同刺痛。",
     "social": "欣赏尊重差异又认真交流的人，喜欢有分寸的亲近。",
     "emotion": "表达被否定时需要缓冲，区分作品反馈和自我价值很有帮助。",
-    "image": "assets/characters/guijinyang.webp"
+    "image": "assets/characters/guijinyang.png"
   },
   {
     "id": "liutuzhang",
@@ -601,7 +601,7 @@ window.XIU_TYPES = [
     "weaknesses": "可能为了照顾气氛不断迁就，忽略自己的真实偏好。",
     "social": "喜欢自然、持续的联系，比起盛大承诺更重视日常回应。",
     "emotion": "对关系变化较敏感，直接询问比反复猜测更能带来安心。",
-    "image": "assets/characters/liutuzhang.webp"
+    "image": "assets/characters/liutuzhang.png"
   },
   {
     "id": "xingrima",
@@ -623,7 +623,7 @@ window.XIU_TYPES = [
     "weaknesses": "可能太在意即时反馈，低估安静表达的价值。",
     "social": "乐于主动开启交流，喜欢真实而有活力的互动。",
     "emotion": "冷场时可能感到挫败，别人的安静未必是在否定你。",
-    "image": "assets/characters/xingrima.webp"
+    "image": "assets/characters/xingrima.png"
   },
   {
     "id": "zhangyuelu",
@@ -645,7 +645,7 @@ window.XIU_TYPES = [
     "weaknesses": "容易把他人的情绪背在身上，需要区分理解与负责。",
     "social": "重视被理解的感觉，偏爱可以安心分享脆弱的关系。",
     "emotion": "感受丰富时需要留白，音乐、散步或书写能提供容纳空间。",
-    "image": "assets/characters/zhangyuelu.webp"
+    "image": "assets/characters/zhangyuelu.png"
   },
   {
     "id": "yihuoshe",
@@ -667,7 +667,7 @@ window.XIU_TYPES = [
     "weaknesses": "可能对新鲜感依赖较高，容易忽略持续执行的成本。",
     "social": "喜欢充满回应的交流，真诚的欣赏会让你更愿意投入。",
     "emotion": "情绪高低起伏时先照顾节奏，不必把每次低潮都当作失去热爱。",
-    "image": "assets/characters/yihuoshe.webp"
+    "image": "assets/characters/yihuoshe.png"
   },
   {
     "id": "zhenshuiyin",
@@ -689,6 +689,6 @@ window.XIU_TYPES = [
     "weaknesses": "可能为适应每个人切换太多面貌，忘记自己的原本意见。",
     "social": "容易融入不同圈子，真正亲近需要能放下迎合的空间。",
     "emotion": "关系紧张时倾向先安抚别人，也请给自己的感受一个位置。",
-    "image": "assets/characters/zhenshuiyin.webp"
+    "image": "assets/characters/zhenshuiyin.png"
   }
 ];
