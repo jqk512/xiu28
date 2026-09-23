@@ -56,9 +56,18 @@
       '<div class="quiz-bottom"><button class="text-button" data-action="previous" ' + (i === 0 ? 'disabled' : '') + '>← 上一题</button><span>选择后自动前进 · 可随时返回修改</span></div><div class="quiz-privacy"><span class="signal"></span> 答案留在此浏览器，不上传任何数据</div></section>';
   }
   function character(type) {
-    // 正式 IP 稿未接入前不创建 img，也不请求预留图片路径。
-    // 后续接入图片时使用 types.js 中的 image 字段。
-    return '<div class="character-stage" aria-label="' + esc(type.name) + '形象预留区"><div class="character-empty"><span class="empty-frame" aria-hidden="true">＋</span><p>这里，留给未来的形象。</p><span>' + esc(type.name) + ' · IP 设计待接入</span></div></div>';
+    return '<figure class="character-stage"><div class="character-frame"><img class="character-image" data-character-image src="' + esc(type.image) + '" alt="' + esc(type.name) + '原创星宿形象" width="800" height="800" decoding="async"><div class="image-fallback" hidden>形象暂未加载，请稍后再试</div></div><figcaption><span>' + esc(type.name) + '</span><span>XIU28 · 星宿形象</span></figcaption></figure>';
+  }
+  function bindCharacterImages() {
+    main.querySelectorAll('[data-character-image]').forEach(function (img) {
+      function failed() {
+        img.hidden = true;
+        const fallback = img.parentElement.querySelector('.image-fallback');
+        if (fallback) fallback.hidden = false;
+      }
+      img.addEventListener('error', failed, { once: true });
+      if (img.complete && !img.naturalWidth) failed();
+    });
   }
   function reason(axis, dictionary, order) {
     const name = dictionary[axis.winner].name;
@@ -78,8 +87,8 @@
   function personality(type, personal) {
     const g = G[type.groupId], el = E[type.elementId];
     const result = personal ? S.calculate(state.answers, Q, T) : null;
-    main.innerHTML = '<section class="result-shell tone-' + type.groupId + '" style="--accent:' + g.color + '"><div class="result-top"><a class="back-link" href="#' + (personal ? 'home' : 'atlas' + (state.atlas === 'all' ? '' : '/' + state.atlas)) + '">← ' + (personal ? '返回首页' : '返回图鉴') + '</a><span class="eyebrow muted">' + (personal ? '你的星宿人格' : '28 宿人格图鉴') + '</span></div>' +
-      '<div class="result-hero"><div class="result-intro"><div class="eyebrow result-eyebrow"><span class="signal"></span>' + (personal ? '与你此刻最接近的一宿' : '28 宿人格档案') + '</div><div class="identity-tags"><span>' + g.fullName + '</span><span>' + type.element + '曜 · ' + el.label + '</span></div><h1>' + esc(type.name) + '</h1><h2>' + esc(type.title) + '</h2><div class="keywords">' + type.keywords.map(function (k) { return '<span>' + esc(k) + '</span>'; }).join('') + '</div><blockquote>“' + esc(type.quote) + '”</blockquote><p class="identity-code">XIU28 / ' + type.id.toUpperCase() + '<span>对应动物：' + esc(type.animal) + '</span></p></div>' + character(type) + '</div>' +
+    main.innerHTML = '<section class="result-shell tone-' + type.groupId + '" style="--accent:' + g.color + '"><div class="result-top"><a class="back-link" href="#' + (personal ? 'home' : 'atlas' + (state.atlas === 'all' ? '' : '/' + state.atlas)) + '">← ' + (personal ? '返回首页' : '返回图鉴') + '</a><span class="eyebrow muted">' + (personal ? '星宿人格认证' : '28 宿人格图鉴') + '</span></div>' +
+      '<div class="result-hero ' + (personal ? 'certified' : '') + '"><div class="result-intro"><div class="eyebrow result-eyebrow"><span class="signal"></span>' + (personal ? '专属星宿人格 · 已完成认证' : '28 宿人格档案') + '</div><div class="identity-tags"><span>' + g.fullName + '</span><span>' + type.element + '曜 · ' + el.label + '</span></div><h1>' + esc(type.name) + '</h1><h2>' + esc(type.title) + '</h2><div class="keywords">' + type.keywords.map(function (k) { return '<span>' + esc(k) + '</span>'; }).join('') + '</div><blockquote>“' + esc(type.quote) + '”</blockquote><p class="identity-code">XIU28 / ' + type.id.toUpperCase() + '<span>对应动物：' + esc(type.animal) + '</span></p></div>' + character(type) + '</div>' +
       '<div class="result-actions">' + (personal ? '<button class="button primary" data-action="save">保存结果 <span>↓</span></button><a class="button secondary" href="#atlas">查看全部 28 宿 <span>↗</span></a><button class="text-button" data-action="start">重新测试 ↻</button>' : '<button class="button primary" data-action="' + (completed() && completed() < Q.length ? 'continue' : 'start') + '">' + (completed() && completed() < Q.length ? '继续我的测试' : '测测我是哪一宿') + ' <span>↗</span></button><a class="button secondary" href="#atlas">查看全部 28 宿</a>') + '</div>' +
       '<div class="reading-heading"><span class="section-kicker">认识你的不同侧面</span><h2>沿着星光，再认识你一点。</h2></div><div class="traits-grid">' +
       [['01', '你的优势', 'strengths', '↗'], ['02', '留意的另一面', 'weaknesses', '◐'], ['03', '你的社交模式', 'social', '↔'], ['04', '你的情绪模式', 'emotion', '≈']].map(function (item) {
@@ -94,7 +103,7 @@
     main.innerHTML = '<section class="atlas-shell"><div class="atlas-heading"><div><div class="section-kicker">探索所有人格</div><h1>28 种星宿，<span class="lime">28 种可能。</span></h1><p>不必等一个测试结果，也能先遇见让你共鸣的那一宿。</p></div></div>' +
       '<nav class="atlas-filters" aria-label="按四象筛选"><a href="#atlas" ' + (state.atlas === 'all' ? 'aria-current="page"' : '') + '>全部 <span>28</span></a>' + S.GROUP_ORDER.map(function (id) { return '<a href="#atlas/' + id + '" ' + (state.atlas === id ? 'aria-current="page"' : '') + '>' + G[id].name + '<span>07</span></a>'; }).join('') + '</nav>' +
       groupIds.map(function (id) { const g = G[id]; return '<section class="atlas-group tone-' + id + '" style="--accent:' + g.color + '"><div class="atlas-group-heading">' + groupMark(id, true) + '<div><h2>' + g.fullName + '</h2><p>' + g.tagline + '</p></div><span>' + g.en + ' / 07</span></div><div class="atlas-grid">' + T.filter(function (t) { return t.groupId === id; }).map(function (t) {
-        return '<a class="type-card" href="#type/' + t.id + '"><div class="type-card-meta"><span>NO. ' + String(T.indexOf(t) + 1).padStart(2, '0') + '</span><span>' + t.element + '曜</span></div><h3>' + t.name + '</h3><p>' + esc(t.title) + '</p><div class="type-card-bottom"><span>' + t.keywords.slice(0, 2).join(' / ') + '</span><span>↗</span></div></a>';
+        return '<a class="type-card" href="#type/' + t.id + '"><div class="type-card-meta"><span>NO. ' + String(T.indexOf(t) + 1).padStart(2, '0') + '</span><span>' + t.element + '曜</span></div><div class="atlas-portrait"><img data-character-image src="' + esc(t.image) + '" alt="' + esc(t.name) + '形象" width="400" height="400" loading="lazy" decoding="async"><span class="image-fallback" hidden>形象暂未加载</span></div><h3>' + t.name + '</h3><p>' + esc(t.title) + '</p><div class="type-card-bottom"><span>' + t.keywords.slice(0, 2).join(' / ') + '</span><span>↗</span></div></a>';
       }).join('') + '</div></section>'; }).join('') + '<div class="atlas-bottom"><p>哪一宿，都只是认识自己的开始。</p><button class="button primary" data-action="' + (completed() && completed() < Q.length ? 'continue' : 'start') + '">' + (completed() && completed() < Q.length ? '继续我的测试' : '找到我的星宿') + ' <span>↗</span></button></div></section>';
   }
   function render() {
@@ -107,6 +116,7 @@
       else if (path[0] === 'type' && T.some(function (t) { return t.id === path[1]; })) personality(T.find(function (t) { return t.id === path[1]; }), false);
       else home();
     } catch (error) { main.innerHTML = '<section class="error-panel"><h1>数据需要检查一下</h1><p>' + esc(error.message) + '</p><a href="#home">返回首页</a></section>'; }
+    bindCharacterImages();
     document.body.dataset.page = path[0] || 'home';
     document.title = (main.querySelector('h1') ? main.querySelector('h1').textContent.replace(/✳/g, '') + ' — ' : '') + 'XIU28 / 宿格';
     window.scrollTo(0, 0);
